@@ -5,10 +5,27 @@
         <ul>
         {% for tarea in tareas %}
             <li>{{tarea}}</li>
-            <button><a href="{%url 'eliminar' tarea.id %}">eliminar</button>
-            <button><a href="{%url 'editar' tarea.id %}">Editar</button>
-            <button><a href="{%url 'agregar'%}">Agregar</button>
+            <button class="btn btn-outline-danger"><a href="{%url 'eliminar' tarea.id %}">eliminar</button>
+            <button class="btn btn-outline-primary"><a href="{%url 'editar' tarea.id %}">Editar</button>
         {% endfor %}
         </ul>
+        <button class="btn btn-outline-success"><a href="{%url 'agregar'%}">Agregar</button>
+{% endblock %}
+
+
+
+
+{% block content2 %}
+
+<ul>
+    {% for tarea in tareas %}
+        <li>{{ tarea2 }}</li>
+        <button class="btn btn-outline-danger"><a href="{% url 'eliminar' tarea.id %}">eliminar</button>
+        <button class="btn btn-outline-primary"><a href="{% url 'editar' tarea.id %}">Editar</button>
+    {% endfor %}
+    </ul>
+    <button class="btn btn-outline-success"><a href="{% url 'agregar' %}">Agregar</button>
 
 {% endblock %}
+
+
